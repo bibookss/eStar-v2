@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Location;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class SchoolFactory extends Factory
@@ -14,7 +15,8 @@ class SchoolFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'school_name'=>$this->faker->company(),
+            'location_id'=>Location::inRandomOrder()->first()->id,
         ];
     }
 }

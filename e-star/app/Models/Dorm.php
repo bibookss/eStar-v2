@@ -15,6 +15,10 @@ class Dorm extends Model
 {
     use HasFactory;
 
+    const TYPE_MEN = 'men';
+    const TYPE_WOMEN = 'women';
+    const TYPE_MIXED = 'mixed';
+
     protected $fillable = [
         'location_id',
         'name',
@@ -25,6 +29,16 @@ class Dorm extends Model
         'has_parking',
         'has_own_bathroom',
         'is_osa_recommended',
+    ];
+
+    protected $attributes = [
+        'type' => self::TYPE_MIXED,
+        'room_capacity' => 1,
+        'has_wifi' => null,
+        'has_kitchen' => null,
+        'has_parking' => null,
+        'has_own_bathroom' => null,
+        'is_osa_recommended' => null,
     ];
 
     public function location() : BelongsTo

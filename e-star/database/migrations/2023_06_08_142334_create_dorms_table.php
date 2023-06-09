@@ -10,7 +10,7 @@ class CreateDormsTable extends Migration
     {
         Schema::create('dorms', function (Blueprint $table) {
             $table->id();
-            // $table->foreignId('location_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('location_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
             $table->string('name');
             $table->string('type');
             $table->integer('min_rent_cost')->nullable();

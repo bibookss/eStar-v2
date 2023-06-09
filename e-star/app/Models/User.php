@@ -14,6 +14,9 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
+    const ROLE_ADMIN = 'admin';
+    const ROLE_USER = 'user';
+
     protected $fillable = [
         'email',
         'password',
@@ -24,9 +27,15 @@ class User extends Authenticatable
         'remember_token',
     ];
 
+    protected $attributes=[
+        'role' => self::ROLE_USER,
+        'is_verified_student' => false,
+        'is_email_verified' => false,
+    ];    
+
     public function posts() : HasMany
     {
         return $this->hasMany(Post::class);
     }
-
+    
 }

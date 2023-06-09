@@ -14,7 +14,15 @@ class LocationFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'name' => $this->faker->secondaryAddress(),
+            'address' => $this->faker->streetName(),
+            'barangay' => $this->faker->cityPrefix,
+            'city' => $this->faker->city(),
+            // 'province' => $this->faker->state(),
+            // 'region' => $this->faker->state(),
+            // 'zip_code' => $this->faker->postcode(),
+            'longitude' => $this->faker->longitude(),
+            'latitude' => $this->faker->latitude(),
         ];
     }
 }

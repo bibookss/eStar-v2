@@ -14,6 +14,11 @@ class Post extends Model
 {
     use HasFactory;
 
+    const TYPE_SINGLE = 'single';
+    const TYPE_DOUBLE = 'double';
+    const TYPE_TRIPLE = 'triple';
+    const TYPE_QUAD = 'quad';
+
     protected $fillable = [
         'room_type',
         'room_price',
@@ -26,6 +31,7 @@ class Post extends Model
     ];
 
     protected $attributes=[
+        'room_type' => self::TYPE_SINGLE,
         'room_rating' => 0,
         'security_rating' => 0,
         'bathroom_rating' => 0,

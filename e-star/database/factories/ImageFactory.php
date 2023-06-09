@@ -2,6 +2,8 @@
 
 namespace Database\Factories;
 
+use App\Models\Dorm;
+use App\Models\Post;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class ImageFactory extends Factory
@@ -14,7 +16,10 @@ class ImageFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'name' => $this->faker->image('public/storage/images',640,480, null, false),
+            'path' => $this->faker->imageUrl(640, 480),
+            'dorm_id' => Dorm::inRandomOrder()->first()->id,
+            'post_id' => Post::inRandomOrder()->first()->id,
         ];
     }
 }
