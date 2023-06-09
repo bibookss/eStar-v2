@@ -2,7 +2,9 @@
 
 namespace Database\Factories;
 
+use App\Models\Dorm;
 use App\Models\Post;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class PostFactory extends Factory
@@ -17,7 +19,7 @@ class PostFactory extends Factory
         return [
             'user_id' => User::inRandomOrder()->first()->id,
             'dorm_id' => Dorm::inRandomOrder()->first()->id,
-            'room_type' => $this->faker->randomElement([Post::TYPE_SINGLE, Post::TYPE_DOUBLE, Post::TYPE_TRIPLE, Post::TYPE_QUAD, Post::TYPE_DORM]),
+            'room_type' => $this->faker->randomElement([Post::TYPE_SINGLE, Post::TYPE_DOUBLE, Post::TYPE_TRIPLE, Post::TYPE_QUAD]),
             'room_price' => $this->faker->numberBetween(1000, 5000),
             'review' => $this->faker->paragraph(),
             'room_rating' => $this->faker->numberBetween(1, 5),

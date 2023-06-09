@@ -33,6 +33,8 @@ class Dorm extends Model
 
     protected $attributes = [
         'type' => self::TYPE_MIXED,
+        'min_rent_cost' => null, 
+        'max_rent_cost' => null,
         'room_capacity' => 1,
         'has_wifi' => null,
         'has_kitchen' => null,

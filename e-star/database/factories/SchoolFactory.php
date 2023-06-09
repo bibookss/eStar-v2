@@ -15,7 +15,7 @@ class SchoolFactory extends Factory
     public function definition()
     {
         return [
-            'school_name'=>$this->faker->company(),
+            'name'=>$this->faker->company(),
             'location_id'=>Location::inRandomOrder()->first()->id,
         ];
     }

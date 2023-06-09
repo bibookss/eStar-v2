@@ -30,7 +30,7 @@ class Location extends Model
     }
 
 
-    public function schools() : HasOne
+    public function school() : HasOne
     {
         return $this->hasOne(School::class);
     }

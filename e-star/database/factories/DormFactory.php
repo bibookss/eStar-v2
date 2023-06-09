@@ -18,10 +18,9 @@ class DormFactory extends Factory
         return [
             'name' => $this->faker->company(),
             'location_id' => Location::inRandomOrder()->first()->id,            
-            'type' -> $this->faker->randomElement([Dorm::TYPE_MEN, Dorm::TYPE_WOMEN, Dorm::TYPE_MIXED]),
-            'min_price' => $this->faker->numberBetween(1000, 5000),
-            'max_price' => $this->faker->numberBetween(5000, 10000),
-            'room_capacity' => $this->faker->numberBetween(1, 4),
+            'type' => $this->faker->randomElement([Dorm::TYPE_MEN, Dorm::TYPE_WOMEN, Dorm::TYPE_MIXED]),
+            'min_rent_cost' => $this->faker->numberBetween(1000, 5000),
+            'max_rent_cost' => $this->faker->numberBetween(1, 4),
             'has_wifi' => $this->faker->boolean(),
             'has_kitchen' => $this->faker->boolean(),
             'has_parking' => $this->faker->boolean(),

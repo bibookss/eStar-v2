@@ -12,7 +12,7 @@ class CreateUsersTable extends Migration
             $table->id();
             $table->string('email')->unique();
             $table->string('password');
-            $table->enum('role');
+            $table->string('role');
             $table->boolean('is_verified_student');
             $table->boolean('is_email_verified');
             $table->rememberToken();
