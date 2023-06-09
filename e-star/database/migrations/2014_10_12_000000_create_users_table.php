@@ -13,8 +13,8 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->string('password');
             $table->enum('role',['user', 'admin'])->default('user');
-            $table->bool('is_verified_student')->default(false);
-            $table->bool('is_email_verified')->default(false);
+            $table->boolean('is_verified_student')->default(false);
+            $table->boolean('is_email_verified')->default(false);
             $table->rememberToken();
             $table->timestamps();
         });

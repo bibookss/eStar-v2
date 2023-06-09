@@ -6,24 +6,23 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateLocationsTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
     public function up()
     {
         Schema::create('locations', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('address');
+            $table->string('barangay');
+            $table->string('city');
+            // $table->string('province');
+            // $table->string('region');
+            // $table->string('zip_code');
+            $table->float('longitude')->nullable();
+            $table->float('latitude')->nullable();
             $table->timestamps();
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
         Schema::dropIfExists('locations');
